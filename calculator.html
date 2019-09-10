@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Calculator</title>
+
+    </head>
+    
+    <body>
+        <script> 
+            var opearator = '';
+            var num1, num2;
+            var number = 0;
+            function buttonPress(n) {
+                number = document.getElementById("screen").value;
+                number = number + n;
+                document.getElementById("screen").value = number;
+            }
+
+            function setOperator(op) {
+                num1 = number;
+                operator = op;
+                document.getElementById("screen").value = ""
+            }
+
+            function evaluateExpression() {
+                num2 = number
+                var answer = 0
+                switch(operator) {
+                    case '*': 
+                    break;
+                       
+                    case '/': 
+                    break;
+
+                    case '+':       
+                        answer = Number(num1) + Number(num2)
+                    break;
+                    case '-': 
+                    break;
+                }
+                
+                document.getElementById("screen").value = answer;
+            }
+        </script>
+        <input type="text" id="screen"><br>
+        <button onclick="buttonPress(1)">1</button>
+        <button onclick="buttonPress(2)">2</button>
+        <button onclick="buttonPress(3)">3</button>
+        <button onclick="setOperator('+')">+</button><br>
+        <button onclick="buttonPress(4)">4</button>
+        <button onclick="buttonPress(5)">5</button>
+        <button onclick="buttonPress(6)">6</button><br>
+        <button onclick="buttonPress(7)">7</button>
+        <button onclick="buttonPress(8)">8</button>
+        <button onclick="buttonPress(9)">9</button><br>
+        <button onclick="evaluateExpression()">=</button><br>
+    </body>
+</html>
